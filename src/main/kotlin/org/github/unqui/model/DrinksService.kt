@@ -20,9 +20,13 @@ class DrinksService (private val drinks: MutableList<Drink>, private val element
 
     fun modifyElement(elementId: String, draftElement: DraftElement) {
         val element = this.getElement(elementId)
-        if (drinks.any { it.id != elementId && it.name == draftElement.name}) throw DrinkException("Element already defined")
+        if (elements.any { it.id != elementId && it.name == draftElement.name}) throw DrinkException("Element already defined")
         element.name = draftElement.name
         element.abv = draftElement.abv
+    }
+
+    fun removeElement(elementId: String) {
+        elements.removeIf { it.id == elementId }
     }
 
     fun search(elements: List<Element>): List<Drink> {
