@@ -58,6 +58,7 @@ fun modifyElement(elementId: String, draftElement: DraftElement)
 
 fun search(elements: List<Element>): List<Drink>
 
+// @Throw UserException si el username esta usado
 fun addUser(drafUser: DraftUser): User
 
 ```
