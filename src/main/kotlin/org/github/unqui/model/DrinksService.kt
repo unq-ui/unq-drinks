@@ -1,7 +1,5 @@
 package org.github.unqui.model
 
-import jdk.jshell.spi.ExecutionControl.UserException
-
 class DrinksService (private val drinks: MutableList<Drink>, private val elements: MutableList<Element>, val users: MutableList<User>) {
 
     private val idGenerator = IdGenerator()

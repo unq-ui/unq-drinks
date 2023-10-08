@@ -26,7 +26,7 @@ Agregar la dependencia:
 <dependency>
     <groupId>com.github.unq-ui</groupId>
     <artifactId>unq-drinks</artifactId>
-    <version>v1.1.1</version>
+    <version>v1.1.2</version>
 </dependency>
 ```
 
