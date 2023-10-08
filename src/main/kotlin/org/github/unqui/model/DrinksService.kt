@@ -1,6 +1,6 @@
 package org.github.unqui.model
 
-class DrinksService (private val drinks: MutableList<Drink>, private val elements: MutableList<Element>) {
+class DrinksService (private val drinks: MutableList<Drink>, private val elements: MutableList<Element>, val users: MutableList<User>) {
 
     private val idGenerator = IdGenerator()
 
@@ -49,4 +49,7 @@ class DrinksService (private val drinks: MutableList<Drink>, private val element
         return elements.find { it.name == name } ?: throw DrinkException("Element not found")
     }
 
+    fun addUser(newUser: DraftUser) {
+        users.add(User(idGenerator.getUserId(), newUser.username, newUser.password, newUser.image))
+    }
 }

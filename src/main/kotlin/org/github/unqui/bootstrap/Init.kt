@@ -1,9 +1,6 @@
 package org.github.unqui.bootstrap
 
-import org.github.unqui.model.DraftDrink
-import org.github.unqui.model.DraftElement
-import org.github.unqui.model.DrinksService
-import org.github.unqui.model.Ingredient
+import org.github.unqui.model.*
 
 private class InitDraftIngredient(val name: String, val amount: String)
 private class InitDraftDrink(
@@ -19,9 +16,10 @@ private class InitDraftDrink(
 
 
 fun getDrinksService(): DrinksService {
-    val drinksService = DrinksService(mutableListOf(), mutableListOf())
+    val drinksService = DrinksService(mutableListOf(), mutableListOf(), mutableListOf())
     addAllIngredients(drinksService)
     addAllDrinks(drinksService)
+    addUsers(drinksService)
     return drinksService    
 }
 
@@ -251,4 +249,16 @@ private fun  transformDrinks(initDraftDrink: InitDraftDrink, drinksService: Drin
         initDraftDrink.preparation
     )
     drinksService.addDrink(draftDrink)
+}
+
+private fun addUsers(drinksService: DrinksService) {
+    val users = listOf(
+        DraftUser("juan", "juan", "https://robohash.org/facilisnobisdignissimos.png?size=50x50&set=set1"),
+        DraftUser("a", "a", "https://robohash.org/uttemporibusrerum.png?size=50x50&set=set1"),
+        DraftUser("b", "b", "https://robohash.org/corruptimaximetotam.png?size=50x50&set=set1"),
+        DraftUser("c", "c", "https://robohash.org/quidempariaturquaerat.png?size=50x50&set=set1"),
+    )
+
+    users.forEach { drinksService.addUser(it) }
+
 }

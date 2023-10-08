@@ -1,6 +1,9 @@
 package org.github.unqui.model
 
-class DraftElement(var name: String, var abv: Int)
+class DraftElement(
+    var name: String,
+    var abv: Int
+)
 
 class DraftDrink(
     var name: String,
@@ -11,4 +14,10 @@ class DraftDrink(
     var ingredients: MutableList<Ingredient>,
     var garnish: String,
     var preparation: String,
+)
+
+class DraftUser(
+    var username: String,
+    var password: String,
+    var image: String
 )
