@@ -16,4 +16,9 @@ class Element(val id: String, var name: String, var abv: Int)
 
 class Ingredient(val amount: String, val element: Element)
 
-class User(val id: String, val username: String, val password: String, val image: String)
+class User(
+    val id: String,
+    val username: String,
+    val password: String,
+    val image: String
+)

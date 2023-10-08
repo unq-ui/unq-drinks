@@ -1,4 +1,4 @@
-# UNQ » UIs » TP Spotify
+# UNQ » UIs » TP Drinks
 
 [![](https://jitpack.io/v/unq-ui/unq-drinks.svg)](https://jitpack.io/#unq-ui/unq-drinks)
 
@@ -26,7 +26,7 @@ Agregar la dependencia:
 <dependency>
     <groupId>com.github.unq-ui</groupId>
     <artifactId>unq-drinks</artifactId>
-    <version>v1.0.0</version>
+    <version>v1.1.1</version>
 </dependency>
 ```
 
@@ -41,6 +41,8 @@ val drinksService = getDrinksService()
 ### DrinksService
 
 ```kotlin
+val users: MutableList<User>
+
 fun getAllElements(): List<Element> 
 
 fun getAllDrinks(): List<Drink>
@@ -55,6 +57,8 @@ fun addDrink(draftDrink: DraftDrink): Drink
 fun modifyElement(elementId: String, draftElement: DraftElement)
 
 fun search(elements: List<Element>): List<Drink>
+
+fun addUser(drafUser: DraftUser): User
 
 ```
 
@@ -71,7 +75,10 @@ class Element(
 ### Ingredient
 
 ```kotlin
-class Ingredient(val amount: String, val element: Element)
+class Ingredient(
+    val amount: String,
+    val element: Element
+)
 ```
 
 ### Drink
@@ -90,7 +97,19 @@ class Drink(
 )
 ```
 
-### SongDraft
+### User
+
+```kotlin
+class User(
+    val id: String,
+    val username: String,
+    val password: String,
+    val image: String
+)
+```
+
+
+### DraftElement
 
 Es la representación de un `Element` antes de ser guardada por el sistema
 
