@@ -134,3 +134,15 @@ class DraftDrink(
     var preparation: String,
 )
 ```
+
+### DraftUser
+
+Es la representación de un `User` antes de ser guardada por el sistema
+
+```kotlin
+class DraftUser(
+    var username: String,
+    var password: String,
+    var image: String
+)
+```
